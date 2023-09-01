@@ -2,7 +2,7 @@
 import dotenv from 'dotenv'
 
 if (process.env.NODE_ENV !== 'production') {
-  dotenv.config()
+  dotenv.config({path: '../.env'})
 }
 
 /**
@@ -14,7 +14,9 @@ export default {
     client: 'pg',
     useNullAsDefault: true,
     connection: {
-      database: 'frutas',
+      ssl: false,
+      host: `${process.env.DB_HOST}`,
+      database: `${process.env.DB_NAME}`,
       user:     `${process.env.DB_USER}`,
       password: `${process.env.DB_PASSWORD}`
     },
