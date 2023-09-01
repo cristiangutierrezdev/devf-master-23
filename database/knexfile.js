@@ -14,7 +14,7 @@ export default {
     client: 'pg',
     useNullAsDefault: true,
     connection: {
-      ssl: false,
+      ssl: true,
       host: `${process.env.DB_HOST}`,
       database: `${process.env.DB_NAME}`,
       user:     `${process.env.DB_USER}`,
